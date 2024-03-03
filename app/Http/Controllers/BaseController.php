@@ -29,7 +29,7 @@ class BaseController extends Controller
     {
         $check = ProductCategory::query()
                         ->where('id', $id)
-                        ->exist();
+                        ->exists();
 
         return $check === true;
     }

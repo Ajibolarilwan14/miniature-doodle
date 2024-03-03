@@ -19,7 +19,10 @@ class ProductFactory extends Factory
         return [
             'name' => fake()->unique()->name(),
             'description' => fake()->text(),
-            'product_category_id' => rand(1, 11)
+            'product_category_id' => rand(1, 10),
+            'price' => 34.55,
+            'stock_quantity' => 10,
+            'user_id' => rand(1, 10),
         ];
     }
 }

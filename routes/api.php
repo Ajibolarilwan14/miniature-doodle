@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,19 @@ Route::prefix('auth')->group(function() {
 });
 
 Route::prefix('product')->middleware(['auth:sanctum'])->group(function() {
+    // Product Category
     Route::post('/category/create', [ProductCategoryController::class, 'create']);
     Route::get('/category/{category}', [ProductCategoryController::class, 'show'])->whereNumber('category');
     Route::patch('/category/{category}', [ProductCategoryController::class, 'update']);
     Route::delete('/category/{category}', [ProductCategoryController::class, 'destroy']);
     Route::get('/category', [ProductCategoryController::class, 'index']);
+
+    // Product
+    Route::post('/create', [ProductController::class, 'create']);
+    Route::get('/{product}', [ProductController::class, 'show']);
+    Route::patch('/{product}', [ProductController::class, 'update']);
+    Route::delete('/{product}', [ProductController::class, 'destroy']);
+    Route::get('/', [ProductController::class, 'index']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
