@@ -27,6 +27,7 @@ Route::prefix('product')->middleware(['auth:sanctum'])->group(function() {
     Route::patch('/category/{category}', [ProductCategoryController::class, 'update']);
     Route::delete('/category/{category}', [ProductCategoryController::class, 'destroy']);
     Route::get('/category', [ProductCategoryController::class, 'index']);
+    Route::get('/category/products/{category}', [ProductCategoryController::class, 'products']);
 
     // Product
     Route::post('/create', [ProductController::class, 'create']);

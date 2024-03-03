@@ -25,6 +25,8 @@ class ProductValidation extends FormRequest
             'name' => 'required|string|unique:products',
             'description' => 'nullable|string',
             'product_category_id' => 'required|integer',
+            'price' => 'required|numeric',
+            'stock_quantity' => 'required|integer',
         ];
     }
 }

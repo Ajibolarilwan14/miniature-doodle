@@ -54,4 +54,9 @@ class ProductCategoryController extends BaseController
             return $this->sendResponse($categories, "Product Categories Retrieved Successfully!");
         
     }
+
+    public function products(ProductCategory $category): JsonResponse
+    {
+        return $this->sendResponse($category->products, "Products Associated with Category ID " .$category->id . " Retrieved Successfully");
+    }
 }

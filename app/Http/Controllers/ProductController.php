@@ -14,15 +14,16 @@ class ProductController extends BaseController
     public function index(Request $request): JsonResponse
     {
         $products = [];
+        $user = auth()->user();
 
         if($request->query('limit'))
         {
-            $products = Product::paginate((int) $request->query('limit'));
+            $products = Product::where('user_id', $user->id)->paginate((int) $request->query('limit'));
 
             return $this->sendResponse($products, "Products Retreived Successfully");
         }
 
-        $products = Product::all();
+        $products = Product::where('user_id', $user->id)->get();
 
         return $this->sendResponse($products, "Products Retreived Successfully");
 
@@ -32,9 +33,11 @@ class ProductController extends BaseController
     {
         if($this->checkIfCategoryExist($request->product_category_id))
         {
-            $product = Product::create($request->validated());
+            $product = Product::create(array_merge($request->validated(), [
+                'user_id' => auth()->user()->id,
+            ]));
             
-            return $this->sendResponse($product, "Product Created Successfully", Response::HTTP_CREATED);
+            return $this->sendResponse(new ProductResource($product), "Product Created Successfully", Response::HTTP_CREATED);
         }else{
             return $this->sendError([], "The selected product category id does not exist");
         }
@@ -42,11 +45,15 @@ class ProductController extends BaseController
 
     public function show(Product $product): JsonResponse
     {
+        if($product->user_id !== auth()->user()->id) abort(Response::HTTP_FORBIDDEN, "you do not have permission to this resource");
+        
         return $this->sendResponse(new ProductResource($product), "Product Retrieved Successfully!");
     }
 
     public function update(ProductValidation $request, Product $product): JsonResponse
     {
+        
+        if($product->user_id !== auth()->user()->id) abort(Response::HTTP_FORBIDDEN, "you do not have permission to this resource");
         
         if($this->checkIfCategoryExist($request->product_category_id))
         {
@@ -61,6 +68,8 @@ class ProductController extends BaseController
 
     public function destroy(Product $product): Jsonresponse
     {
+        if($product->user_id !== auth()->user()->id) abort(Response::HTTP_FORBIDDEN, "you do not have permission to this resource");
+
         $product->delete();
 
         return $this->sendResponse([], "Product deleted successfully!");
