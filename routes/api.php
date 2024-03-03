@@ -20,7 +20,10 @@ Route::prefix('auth')->group(function() {
 });
 
 Route::prefix('product')->middleware(['auth:sanctum'])->group(function() {
-    Route::get('/create', [ProductCategoryController::class, 'index']);
+    Route::post('/category/create', [ProductCategoryController::class, 'create']);
+    Route::get('/category/{category}', [ProductCategoryController::class, 'show'])->whereNumber('category');
+    Route::patch('/category/{category}', [ProductCategoryController::class, 'update']);
+    Route::delete('/category/{category}', [ProductCategoryController::class, 'destroy']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
