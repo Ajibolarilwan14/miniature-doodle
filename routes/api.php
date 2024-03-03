@@ -24,6 +24,7 @@ Route::prefix('product')->middleware(['auth:sanctum'])->group(function() {
     Route::get('/category/{category}', [ProductCategoryController::class, 'show'])->whereNumber('category');
     Route::patch('/category/{category}', [ProductCategoryController::class, 'update']);
     Route::delete('/category/{category}', [ProductCategoryController::class, 'destroy']);
+    Route::get('/category', [ProductCategoryController::class, 'index']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

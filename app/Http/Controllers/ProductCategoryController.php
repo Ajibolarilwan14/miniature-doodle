@@ -11,6 +11,7 @@ use App\Http\Resources\ProductCategoryResource;
 
 class ProductCategoryController extends BaseController
 {
+
     public function create(ProductCategoryRequest $request): JsonResponse
     {
         $product = ProductCategory::create($request->validated());
@@ -35,5 +36,22 @@ class ProductCategoryController extends BaseController
         $category->delete();
 
         return $this->sendResponse([], "Product Category has been deleted successfully");
+    }
+
+    public function index(Request $request): JsonResponse
+    {
+        $categories = [];
+        // dd($request->query('limit'));
+        if($request->query('limit'))
+        {
+            $categories = ProductCategory::paginate((int) $request->query('limit'));
+
+            return $this->sendResponse($categories, "Product Categories Retrieved Successfully!");
+        }
+
+            $categories = ProductCategory::all();
+
+            return $this->sendResponse($categories, "Product Categories Retrieved Successfully!");
+        
     }
 }
