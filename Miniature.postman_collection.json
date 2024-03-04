@@ -1,0 +1,1253 @@
+{
+	"info": {
+		"_postman_id": "60e76f80-c50a-44c9-8256-8d4995aa418f",
+		"name": "Miniature",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6723835",
+		"_collection_link": "https://otandtconsulting.postman.co/workspace/JBtheBADHGUY-Workspace~b560e6e1-efd8-4381-8084-60f421ea41bc/collection/6723835-60e76f80-c50a-44c9-8256-8d4995aa418f?action=share&source=collection_link&creator=6723835"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.code === 200) {",
+									"    pm.environment.set('auth_token', pm.response.json().data.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"shaniya.gislason@example.net\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"erolfson@example.com\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 08:45:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Login Successfully\",\n    \"data\": {\n        \"token\": \"1|cgoma28SqEgkKQO2LnG3pVq2buCNir8qhG6SDXe0f7aafc48\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product Category",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"doodle12\",\n    \"description\": \"This is a test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/category/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"doodle1\",\n    \"description\": \"This is a test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/product/category/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"category",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 09:01:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product Category Created Successfully!\",\n    \"data\": {\n        \"name\": \"doodle1\",\n        \"description\": \"This is a test\",\n        \"updated_at\": \"2024-03-03T09:01:11.000000Z\",\n        \"created_at\": \"2024-03-03T09:01:11.000000Z\",\n        \"id\": 12\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/category/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"category",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/product/category/11",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"category",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 09:09:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product Category Retrieved Successfully!\",\n    \"data\": {\n        \"name\": \"doodle\",\n        \"description\": \"No Description Set\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"doodle2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/category/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"category",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"doodle2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/product/category/11",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"category",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 09:24:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product Category has been updated successfully\",\n    \"data\": {\n        \"id\": 11,\n        \"name\": \"doodle2\",\n        \"description\": null,\n        \"created_at\": \"2024-03-03T08:59:31.000000Z\",\n        \"updated_at\": \"2024-03-03T09:24:41.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/category/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/product/category/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"category",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 09:29:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product Category has been deleted successfully\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/category/?limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"category",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/product/category/?limit=10",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"category",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 09:58:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product Categories Retrieved Successfully!\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 2,\n                \"name\": \"Dudley Bernier\",\n                \"description\": \"Dolor assumenda perspiciatis quidem occaecati quia unde commodi. Velit neque autem nam neque. Doloribus sed necessitatibus ut blanditiis est.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Donnie Reilly IV\",\n                \"description\": \"Laborum eos eaque ex eos aut repellat. Optio culpa sint consequuntur officia voluptates voluptatem. Iste hic nisi sed. Qui est enim cumque ea. Occaecati vel repellat debitis neque tempore placeat.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Miss Agustina Corwin\",\n                \"description\": \"Esse voluptatem doloribus perferendis in. Ab iste velit ut. Recusandae sit sed necessitatibus veniam soluta maiores voluptas. Quis et aut rem nesciunt aliquam corporis.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Gunner Kuvalis\",\n                \"description\": \"Architecto consectetur error natus. Velit consequatur aut sit sint. Et nemo tempore commodi. Hic quaerat architecto et aperiam doloribus.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Susie McLaughlin II\",\n                \"description\": \"Illum autem porro harum rerum enim. Vel voluptate at et aut quia facilis sit ipsa. Iure dicta hic animi nam fuga. Error debitis ducimus porro aut qui est beatae.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Mike Turner\",\n                \"description\": \"Eum praesentium sed blanditiis. Animi eum quia omnis et.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Candace Pollich MD\",\n                \"description\": \"Tempore qui id quis eaque. Cupiditate doloremque sed ut eius delectus incidunt commodi. Laudantium et quia dolorem eum repellat.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Dr. Katelyn Witting\",\n                \"description\": \"In ipsum sed velit. Aperiam vel voluptate laboriosam quis in. Iure dolorum et optio consequatur.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Jamal Wiegand\",\n                \"description\": \"Qui omnis deserunt neque corporis sunt autem. Cumque a voluptatem qui nemo. Aut distinctio et consequuntur dolor ab unde. Porro a et sunt aut maxime dolor.\",\n                \"created_at\": \"2024-03-03T07:11:06.000000Z\",\n                \"updated_at\": \"2024-03-03T07:11:06.000000Z\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"doodle2\",\n                \"description\": null,\n                \"created_at\": \"2024-03-03T08:59:31.000000Z\",\n                \"updated_at\": \"2024-03-03T09:24:41.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/product/category?page=1\",\n        \"from\": 1,\n        \"last_page\": 2,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/v1/product/category?page=2\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/product/category?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/product/category?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/product/category?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://127.0.0.1:8000/api/v1/product/category?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/v1/product/category\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 11\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/category/products/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"category",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/product/category/products/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"category",
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 14:15:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Products Associated with Category ID 2 Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 10,\n            \"name\": \"Jayden Torphy\",\n            \"description\": \"Qui ullam corrupti est consequatur saepe. Ipsam pariatur voluptatem quo ratione doloribus laudantium quisquam. Nihil porro debitis numquam accusamus. Dolor dolor eum blanditiis iusto velit sit.\",\n            \"price\": \"34.55\",\n            \"stock_quantity\": 10,\n            \"user_id\": 3,\n            \"product_category_id\": 2,\n            \"created_at\": \"2024-03-03T11:19:28.000000Z\",\n            \"updated_at\": \"2024-03-03T11:19:28.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Nike Sneakers\",\n            \"description\": \"Affordable sneakers(white)\",\n            \"price\": \"22.12\",\n            \"stock_quantity\": 11,\n            \"user_id\": 1,\n            \"product_category_id\": 2,\n            \"created_at\": \"2024-03-03T13:54:06.000000Z\",\n            \"updated_at\": \"2024-03-03T13:54:06.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Jordan Sneakers\",\n            \"description\": \"Affordable sneakers(white)\",\n            \"price\": \"22.12\",\n            \"stock_quantity\": 11,\n            \"user_id\": 1,\n            \"product_category_id\": 2,\n            \"created_at\": \"2024-03-03T13:55:35.000000Z\",\n            \"updated_at\": \"2024-03-03T13:55:35.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jordan Sneakers\",\n    \"description\": \"Affordable sneakers(white)\",\n    \"product_category_id\": 2,\n    \"price\": 22.12,\n    \"stock_quantity\": 11\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Nike Sneakers\",\n    \"description\": \"Affordable sneakers(white)\",\n    \"product_category_id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/product/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 10:21:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product Created Successfully\",\n    \"data\": {\n        \"name\": \"Nike Sneakers\",\n        \"description\": \"Affordable sneakers(white)\",\n        \"product_category_id\": 2,\n        \"updated_at\": \"2024-03-03T10:21:21.000000Z\",\n        \"created_at\": \"2024-03-03T10:21:21.000000Z\",\n        \"id\": 12\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/14",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"14"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/product/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 10:47:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product Retrieved Successfully!\",\n    \"data\": {\n        \"name\": \"Jonatan Huels IV\",\n        \"description\": \"Rem non accusantium modi aut qui. Et id ab deleniti voluptatem et. Sed non voluptas eveniet. Et consequuntur eos possimus laudantium cum ipsam corrupti. Id aut est blanditiis.\",\n        \"product_category_id\": 6\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Edit12\",\n    \"product_category_id\": 8,\n    \"price\": 33.22,\n    \"stock_quantity\": 22\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Edit\",\n    \"product_category_id\": 8\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/product/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 10:57:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product Edited Successfully\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/product/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 10:58:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Product deleted successfully!\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/product/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Mar 2024 23:27:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Products Retreived Successfully\",\n    \"data\": {\n        \"products\": [\n            {\n                \"id\": 13,\n                \"name\": \"Jayden Torphy1\",\n                \"description\": \"Qui ullam corrupti est consequatur saepe. Ipsam pariatur voluptatem quo ratione doloribus laudantium quisquam. Nihil porro debitis numquam accusamus. Dolor dolor eum blanditiis iusto velit sit.\",\n                \"price\": \"34.55\",\n                \"stock_quantity\": 10,\n                \"user_id\": 1,\n                \"product_category_id\": 2,\n                \"created_at\": \"2024-03-03T11:19:28.000000Z\",\n                \"updated_at\": \"2024-03-03T11:19:28.000000Z\"\n            },\n            {\n                \"id\": 14,\n                \"name\": \"Aylin Casper MD1\",\n                \"description\": \"Voluptatem atque minus explicabo. Ratione quae similique aliquid accusamus quia soluta architecto. Saepe et aliquid quo quos aut rerum aperiam. Nisi debitis qui placeat sunt ut.\",\n                \"price\": \"34.55\",\n                \"stock_quantity\": 10,\n                \"user_id\": 1,\n                \"product_category_id\": 1,\n                \"created_at\": \"2024-03-03T11:19:28.000000Z\",\n                \"updated_at\": \"2024-03-03T11:19:28.000000Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{auth_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
