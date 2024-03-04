@@ -16,7 +16,7 @@ class AuthController extends BaseController
 
         if(!($user) || (!(Hash::check($request->password, $user->password))))
         {
-            return $this->sendError([], "Whoops, that credentials does not match our records!", Response::HTTP_UNPROCESSABLE_ENTITY);
+            return $this->sendError([], "Whoops, that credentials does not match our records!", Response::HTTP_BAD_REQUEST);
         }
 
         return $this->sendResponse([
