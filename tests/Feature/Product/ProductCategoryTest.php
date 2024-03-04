@@ -78,4 +78,14 @@ describe('testing product category endpoint', function() {
         ])->assertOk()
         ->assertJsonStructure(['data']);
     });
+
+    it('ensure product category can be retrieved', function() {
+        $user = User::factory()->create();
+        $category = ProductCategory::factory()->create();
+
+        actingAs($user)->get('/api/v1/product/category/products/' . $category->id, [
+            'Accept' => 'Application/json'
+        ])->assertOk()
+        ->assertJsonStructure();
+    });
 });
