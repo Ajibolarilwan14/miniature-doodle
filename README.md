@@ -9,6 +9,7 @@ After you cd into the project root in your terminal, run:
 - cp .env.example .env
 - create a fresh db in your local MYSQL server
 - update the DB credentials in the .env file
+- php artisan key:generate
 - php artisan migrate --seed
 
 ## Installing Redit
