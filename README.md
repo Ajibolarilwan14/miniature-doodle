@@ -8,12 +8,12 @@ After you cd into the project root in your terminal, run:
 - composer update
 - cp .env.example .env
 - create a fresh db in your local MYSQL server
-- update the DB credentials with the .env file
+- update the DB credentials in the .env file
 - php artisan migrate --seed
 
 ## Installing Redit
 
-This project make use of redis DB and predis database client, make sure you have redis installed on your PC for this project to work. If you do not have redis installed on your PC, head over to **[Redis DB](https://redis.io)** and install one + plus a redis insight tool if you'd like to see all caching data in real-time.
+This project make use of the redis DB and predis database client, make sure you have redis installed on your PC for this project to work. If you do not have redis installed on your PC, head over to **[Redis DB](https://redis.io)** and install one + plus a redis insight tool if you'd like to see all caching data in real-time.
 
 ## Serving the application
 
